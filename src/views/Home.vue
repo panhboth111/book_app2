@@ -1,18 +1,37 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Book
+      v-for="(book, index) in books"
+      :key="index"
+      :title="book.title"
+      :description="book.description"
+    />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import Book from "../components/Home/Book";
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
-    HelloWorld
-  }
-}
+    Book,
+  },
+  data: () => ({
+    books: [
+      {
+        title: "Harry Potter",
+        description: "this is a book",
+      },
+      {
+        title: "Ream keeeee",
+        description: "this is a bookkkkkk",
+      },
+      {
+        title: "Ream keeeeeeeeeee",
+        description: "this is a bookkkkkkkkkk",
+      },
+    ],
+  }),
+};
 </script>
